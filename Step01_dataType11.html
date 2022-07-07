@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType11.html</title>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <button onclick="remove()">삭제</button> <!--특정시점에 실행 시키고픔-->
+    <button onclick="input()">입력 받기</button>
+    <button onclick="print()">입력 받은 내용 출력하기</button>
+    <script>
+        //콘솔창에서 쳐보기
+        //alert()
+        //confirm() , confirm("삭제할까요?")
+        //prompt() , let msg=prompt("입력...")
+
+        //let isDelete=confirm("삭제할까요?"); 이거만 쓰면 페이지 로딩시점에 실행된다
+
+        function remove(){ //특정시점에 confirm 함수를 작동시키기 위해 함수를 만들어놓자
+            //삭제 여부를 입력받아서 지역변수 isDelete에 담는다.
+            let isDelete=confirm("삭제할까요?"); //페이지 로딩시점에 실행되지 않고 함수안에 넣음으로서 만들어만 놓음
+            //만일 삭제할거라면 (isDelete 에 true 가 들어있다면)
+            if(isDelete){
+                    //삭제하는 작업하기
+                    console.log("삭제 합니다.");
+            }
+        }
+        //함수안에서 만든내용을 함수 밖에서 접근할수없다
+        //즉 호출될때 만들어진 함수안에 지역변수는 함수밖에서는 사라진다. 
+
+
+        //1번 , 페이지 로딩 시점에 global 영역에 변수를 만들어 놓는다.
+        let msg; //위치는 상관없다.
+        
+        function input(){
+            //global 영역에 만들어진 변수에 입력한 문자열을 저장한다.
+            msg=prompt("메세지를 입력하세요");
+        }
+        //이함수에서 작업한내용을 다른곳에서 다른함수에 이용하고싶다. 어케할까 -> 1번으로
+
+        function print(){
+            //global 영역에 만들어진 변수에 있는 값을 참조해서 작업을한다.
+            console.log(msg);
+        }
+
+         
+
+    </script>
+</body>
+</html>

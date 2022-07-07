@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType6.html</title>
+</head>
+<body>
+    
+    <h1>javascript data type</h1>
+    <button onclick="f1()">눌러보셈</button> <!--버튼 누를때마다 f1함수 호출가능-->
+    
+    <script>
+        /*
+            특정 시점에 일괄 실행할 javascript 를 미리 준비해 놓기 위해서는
+            function type data 가 필요하다 
+            function type 만이 필요할때 콜가능 하다. 참조도 가능
+            다른 type(number,string,object)등등은 참조는 가능하나 콜 불가 , num1() 이나 name1() 이런거 안됨
+        */
+
+        // number type data 를 만들어서 num1 이라는 이름의 변수에 대입하기
+        let num1=10;
+        // string type data 를 만들어서 name1 이라는 이름의 변수에 대입하기
+        let name1="kim";
+        // object type data 를 만들어서 mem1 이라는 이름의 변수에 대입하기 
+        let mem1={};
+        
+        
+        //function type data를 만들어서 f1 이라는 이름의 변수에 대입하기
+        let f1 = function(){
+            console.log("하나");
+            console.log("두울");
+            console.log("세엣");
+        };
+        // 함수 콜 방법 ---> f1()
+
+        // f1 안에 들어있는 값을 참조
+        let f2=f1;  // f2()로 f1과 동일한 함수 호출 가능
+
+        let result=f1(); // 로딩시 f1 함수 작동 가능
+        //f1();  //로딩시 작동 하게하는 명령어
+        
+    
+
+
+        //alert -> built in 함수 , 웹브라우저에서 기본으로 제공해주는 함수.
+    
+        
+
+    </script>
+</body>
+</html>

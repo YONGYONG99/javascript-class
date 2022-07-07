@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_example3.html</title>
+</head>
+<body>
+    <input type="text" id="num1">
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button>
+    <input type="text" id="num2">
+    =
+    <span id="result"></span>
+
+    <script>
+
+         //이영역은 페이지 로딩시점에 작동하므로
+         //이곳에다가 let num1 = document.querySelector("#num1").value; 해놓으면 num1 에는 "" 빈 문자열이 저장된다.
+         //이런식으로 단순히 미리 값만 가져와서 아래 함수에서 사용하면
+         //입력값이 바뀐것을 적용할수가 없다.
+         //즉 사물함 키를 가져와서 사용해야한다.
+
+        function plus(){
+
+            let num1 = document.querySelector("#num1").value; 
+            let num2 = document.querySelector("#num2").value; 
+           
+            let result = Number(num1)+Number(num2);
+            document.querySelector("#result").innerText = result;
+            
+
+        }
+
+        
+
+        function minus(){
+
+            let num1 = document.querySelector("#num1").value;
+            let num2 = document.querySelector("#num2").value;
+            let result = Number(num1)-Number(num2);
+            document.querySelector("#result").innerText = result;
+
+        }
+
+        
+    </script>
+
+    
+
+</body>
+</html>
