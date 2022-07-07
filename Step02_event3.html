@@ -29,15 +29,14 @@
         // 출력형식 => x좌표 : 100 , y좌표 : 200
         // 구글 검색 키워드 => addEventListener mousemove x y
 
-        let div1 = document.querySelector("#myDiv");
-        let div2 = document.querySelector(".box");
+        
 
         document.querySelector("#myDiv").addEventListener("mousedown",function(){
-            div1.style.backgroundColor="yellow";
+            document.querySelector("#myDiv").style.backgroundColor="yellow";
         });
 
         document.querySelector("#myDiv").addEventListener("mouseup",function(){
-            div1.style.backgroundColor="white";
+            document.querySelector("#myDiv").style.backgroundColor="white";
         });
        
         document.querySelector("#myDiv").addEventListener("mousemove",function(e){//e에 object타입이 전달됨
