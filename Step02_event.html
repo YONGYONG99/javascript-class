@@ -10,7 +10,7 @@
     <!--
         첫번째 패턴
         이벤트 처리를 onXXX="" 속성을 사용해서 처리하면 global 변수(함수)가 필요하다
-        global 변수(함수)를 많이 만드는것은 바람직 하지 않다.
+        global 변수(함수)를 많이 만드는것은 바람직 하지 않다. 여러 충돌을 야기하기 떄문
     -->
     <button onclick="clicked()">눌러보셈</button>
 
@@ -37,7 +37,7 @@
         } 
         */
 
-        //두번째 패턴
+        //두번째 패턴 - 이방법은 이처럼 global 변수를 안만들어도 된다.
         document.querySelector("#myBtn").addEventListener("click",function(){
             document.querySelector("#console").innerText="앗 버튼을 눌렀네요?";
         });

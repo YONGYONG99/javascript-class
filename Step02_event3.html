@@ -39,9 +39,9 @@
             document.querySelector("#myDiv").style.backgroundColor="white";
         });
        
-        document.querySelector("#myDiv").addEventListener("mousemove",function(e){//e에 object타입이 전달됨
+        document.querySelector("#myDiv").addEventListener("mousemove",function(e){//일어난 이벤트에 대한 정보를 갖고있는 objcet가 마우스가 움직일때마다 계속 전달됨
             console.log("mousemove!");
-            console.log(e);
+            console.log(e); 
             //출력할 정보 구성하기
             let info="x좌표: "+e.offsetX+", y좌표:"+e.offsetY;
             //div 의 innerText 로 출력하기

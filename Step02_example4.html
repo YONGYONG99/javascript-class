@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example3.html</title>
+</head>
+<body> <!-- div{div$}*20 -->   
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+    
+    <button id="changeBtn">바꾸기</button>
+    <button id="changeBtn2">바꾸기2</button>
+    <button id="changeBtn3">바꾸기3</button>
+    
+    <script>
+        //누를때마다 김구라로 바뀌는 함수 작성해보자
+    
+        let index=0; //글로벌 영역에 선언
+
+        document.querySelector("#changeBtn").addEventListener("click",function(){
+        //만일 index가 10보다 작으면 if 문 {} 안에 있는 내용을 실행하고
+        //그렇지 않으면 (10 이상이면) 건너띈다
+        if(index < 10){ //true 아니면 false로 바뀌게되고
+                        //여기서 부터 true면 실행하고 false면 빠져나온다
+            let divs = document.querySelectorAll("div");
+            //배열의 특정 인덱스에 들어있는 div 요소의 innerText 를 변화 시키기
+            divs[index].innerText="김구라";
+            //index 값을 1 증가 시킨다.
+            index = index + 1;
+            }
+        });
+
+        document.querySelector("#changeBtn2").addEventListener("click",function(){
+            //만일 index 가 10이면    
+            if(index == 10){
+            //함수를 여기서 끝내라(종료)
+            return;
+            }        
+            let divs = document.querySelectorAll("div");
+            
+            divs[index].innerText="김구라";
+            
+            index = index + 1;
+            
+    });
+
+        document.querySelector("#changeBtn3").addEventListener("click",function(){
+            let divs = document.querySelectorAll("div");
+            
+            if(index == divs.length){
+            
+            return;
+            }        
+                       
+            divs[index].innerText="김구라";
+            
+            index = index + 1;
+            
+    });
+        
+
+    </script>
+    
+
+</body>
+</html>
+
+
+<!-- 
+    function 함수 
+
+특정 시점에 일괄 실행할 javascript 들을 모아 놓을수 있다.
+-함수를 호출(call) 하면 함수 안쪽으로 실행 순서가 들어간다.
+-함수는 언제 종료 되지요?
+ 1. 함수 안에 있는 모든 javascript 를 수행하고 더이상 수행할 javascript 가 없을때
+ 2. 수행하다가 return 이라는 예약어를 만나도 종료가 된다.
+
+-->

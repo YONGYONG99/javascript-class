@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step02_example3.html</title>
 </head>
-<body> <!-- div{div$}*20 -->
+<body> <!-- div{div$}*20 -->   
     <div>div1</div>
     <div>div2</div>
     <div>div3</div>
@@ -28,6 +28,7 @@
     <div>div19</div>
     <div>div20</div>
     <button id="changeBtn">바꾸기</button>
+    <button id="changeBtn2">바꾸기2</button>
     <script>
 
         /*
@@ -40,26 +41,37 @@
         
         
             -hint
-            for(let i=0; i<n; i++){             //n개 실행 , 0부터 n-1 까지 반복
+            for(let i=0; i<n; i++){             //n개만큼 반복수행 , 0부터 n-1 까지 반복
                 console.log("오잉?");
                 console.log(i);
             }
         */
 
 
-        for(let num = 0; num<20; num++){
+        /*
+
+        for(let i = 0; i<20; i++){
             document.querySelector("#changeBtn").addEventListener("click",function(){
-            document.querySelectorAll("div")[num].innerText="김구라";
+            document.querySelectorAll("div")[i].innerText="김구라";
             
         });      
         }
-        
-        
-        
-        
-        
 
+        */
 
+        document.querySelector("#changeBtn").addEventListener("click",function(){
+                for(let i=0; i<20; i++){
+                    document.querySelectorAll("div")[i].innerText="김구라";
+                }
+            });
+
+        document.querySelector("#changeBtn2").addEventListener("click",function(){
+                let divs = document.querySelectorAll("div");
+                for(let i=0; i<divs.length; i++){
+                    divs[i].innerText="김구라";
+                }
+            });
+        
 
     </script>
 
