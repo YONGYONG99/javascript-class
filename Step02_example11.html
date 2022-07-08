@@ -35,18 +35,45 @@
         */
 
 
+
         document.querySelector("#mySelect").addEventListener("change",function(){       
             
-            
-            let data = ["가위" ,"바위","보"];     
-            let ranNum=Math.floor(Math.random()*3)
-
+            let value=document.querySelector("#mySelect").value;
+                         
+            let ranNum=Math.floor(Math.random()*3);
 
             document.querySelector("#comSelect").value = ranNum;
 
             
+            if(value == 0 ){ //만일 내가 가위를 냈을때
+                if(ranNum == 0){//컴퓨터가 가위를 낸경우
+                    document.querySelector("#result").innerText="비겼습니다.";
+                }else if(ranNum == 1){
+                    document.querySelector("#result").innerText="졌습니다.";
+                }else if(ranNum == 2){
+                    document.querySelector("#result").innerText="이겼습니다.";
+                }
+            }else if(value==1){//아니면 내가 바위를 냈을때
+                if(ranNum == 0){//컴퓨터가 가위를 낸경우
+                    document.querySelector("#result").innerText="이겼습니다.";
+                }else if(ranNum == 1){
+                    document.querySelector("#result").innerText="비겼습니다.";
+                }else if(ranNum == 2){
+                    document.querySelector("#result").innerText="졌습니다."
+                }
+            }else if(value==2){//아니면 내가 보를 냈을때
+                if(ranNum == 0){//컴퓨터가 가위를 낸경우
+                    document.querySelector("#result").innerText="졌습니다.";
+                }else if(ranNum == 1){
+                    document.querySelector("#result").innerText="이겼습니다.";
+                }else if(ranNum == 2){
+                    document.querySelector("#result").innerText="비겼습니다.";
+                }
+            }
 
-        
+            
+
+            
             
         
         });
